@@ -597,7 +597,7 @@ class visualizer:
             for core in range(len(testX[pid])):
                 core_loss_vec = tf.keras.losses.mean_squared_error(np.reshape(testX[pid][core], (testX[pid][core].shape[0], testX[pid][core].shape[1])),
                                                                    np.reshape(self.model.predict(testX[pid][core], batch_size=None), (testX[pid][core].shape[0], testX[pid][core].shape[1])))
-               if (testY[pid][core] == 0):
+                if (testY[pid][core] == 0):
                     benign_loss_vec.extend(core_loss_vec)
                 if (testI[pid][core] < 0.2 and testY[pid][core] == 1):
                     lowinv_loss_vec.extend(core_loss_vec)
